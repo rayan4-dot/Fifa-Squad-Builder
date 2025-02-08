@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIFA Squad Builder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styling.css">
+
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add Player</h2>
+    <div class="form-group">
+      <label for="playerName">Name:</label>
+      <input type="text" id="playerName" required>
+    </div>
+    <div class="form-group">
+      <label for="playerImage">Image URL:</label>
+      <input type="text" id="playerImage" required>
+    </div>
+    <div class="form-group">
+      <label for="playerPosition">Position:</label>
+      <select id="playerPosition" onchange="toggleAttributes()">
+        <option value="ST">Striker</option>
+        <option value="LW">Left Wing</option>
+        <option value="RW">Right Wing</option>
+        <option value="CM">Center Mid</option>
+        <option value="LB">Left Back</option>
+        <option value="CB">Center Back</option>
+        <option value="RB">Right Back</option>
+        <option value="GK">Goalkeeper</option>
+      </select>
+    </div>
+
+    <div id="outfieldAttributes">
+      <div class="form-group">
+        <label for="playerPace">Pace:</label>
+        <input type="number" id="playerPace" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerShoot">Shooting:</label>
+        <input type="number" id="playerShoot" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerDribble">Dribbling:</label>
+        <input type="number" id="playerDribble" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerPhysic">Physical:</label>
+        <input type="number" id="playerPhysic" min="1" max="99">
+      </div>
+    </div>
+
+    <div id="goalkeeperAttributes" style="display: none;">
+      <div class="form-group">
+        <label for="playerDiving">Diving:</label>
+        <input type="number" id="playerDiving" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerHandling">Handling:</label>
+        <input type="number" id="playerHandling" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerKicking">Kicking:</label>
+        <input type="number" id="playerKicking" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerReflexes">Reflexes:</label>
+        <input type="number" id="playerReflexes" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerSpeed">Speed:</label>
+        <input type="number" id="playerSpeed" min="1" max="99">
+      </div>
+      <div class="form-group">
+        <label for="playerPositioning">Positioning:</label>
+        <input type="number" id="playerPositioning" min="1" max="99">
+      </div>
+    </div>
+
+    <button onclick="createPlayer()">Add Player</button>
+  </div>
+
+  <div class="pitch-container">
+    <div class="squad-builder">
+      <div class="pitch">
+        <div class="player-card st" id="ST-card">
+          <span class="position-label">ST</span>
+        </div>
+        <div class="player-card lw" id="LW-card">
+          <span class="position-label">LW</span>
+        </div>
+        <div class="player-card rw" id="RW-card">
+          <span class="position-label">RW</span>
+        </div>
+        <div class="player-card lcm" id="CM-card-1">
+          <span class="position-label">CM</span>
+        </div>
+        <div class="player-card cm" id="CM-card-2">
+          <span class="position-label">CM</span>
+        </div>
+        <div class="player-card rcm" id="CM-card-3">
+          <span class="position-label">CM</span>
+        </div>
+        <div class="player-card lb" id="LB-card">
+          <span class="position-label">LB</span>
+        </div>
+        <div class="player-card lcb" id="CB-card-1">
+          <span class="position-label">CB</span>
+        </div>
+        <div class="player-card rcb" id="CB-card-2">
+          <span class="position-label">CB</span>
+        </div>
+        <div class="player-card rb" id="RB-card">
+          <span class="position-label">RB</span>
+        </div>
+        <div class="player-card gk" id="GK-card">
+          <span class="position-label">GK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="fifa.js"></script>
+</body>
+</html>
